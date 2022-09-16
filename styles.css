@@ -1,0 +1,53 @@
+:root {
+  --background: #0C5A99;
+  --content-font: 'Abel', sans-serif;
+  --title-font: 'Bungee Shade', display;
+}
+
+body {
+  font-family: var(--content-font);
+  background: var(--background);
+  box-sizing: border-box;
+  padding: 3ch;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr min(80ch, calc(100% - 16px)) 1fr;
+  grid-column-gap: 8px;
+  place-items: center;
+}
+
+.parent > * {
+  grid-column: 2;
+}
+
+:where(h1, h4) {
+  margin-block: var(--size-4);
+  font-family: var(--title-font);
+}
+
+:where(p, li) {
+  font-size: var(--font-size-4);
+}
+
+:where(h3) {
+  font-size: var(--font-size-6);
+  border-block-start: 2px solid currentColor;
+  color: var(--pink-5);
+}
+
+:where(h4) {
+  font-size: var(--font-size-5);
+  color: var(--lime-5);
+  border-block-start: 1px solid currentColor;
+}
+
+:where(p, ul) {
+  margin-block-end: var(--size-6);
+}
+
+:where(p, h1, h3, h4) {
+  max-inline-size: 100%;
+  text-align: center;
+}
